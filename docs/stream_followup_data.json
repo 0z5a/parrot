@@ -1600,6 +1600,8 @@
     "builds/test_extended_p2": "327ee66a357e1b9ec26eb7c50d4046d6bdd54b23491ccd1db2dccb83dfee00e3",
     "builds/parrot_tests_extended_p2": "581a563cc0456126557e689dfbf8f188e547d9df3251b96f3c42b41ab44e2d69",
     "builds/bench_chain_p1": "9a1b604e70d6febd98739a3e8f66873530455d4c5e112307f217afac3257c61e",
-    "builds/bench_chain_p2": "80d61f825e580bf2390be153ed61f05148fee54d6b65baf8568dd631e1846cb0"
-  }
+    "builds/bench_chain_p2": "80d61f825e580bf2390be153ed61f05148fee54d6b65baf8568dd631e1846cb0",
+    "builds/test_extended_p1_current_tests": "bdbd1c34173f2971bd3b3220a6ab663565b1b1cf2c1a582d42aef94587fbb187"
+  },
+  "extended-p1-current-test": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases:    28 |    28 passed | 0 failed | 0 skipped\n[doctest] assertions: 15048 | 15048 passed | 0 failed |\n[doctest] Status: SUCCESS!\n"
 }

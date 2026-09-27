@@ -7,7 +7,9 @@ and P2 `6031fe532ee91c5b8a9a5c1961b6b8326f19895c`.
 
 ## Correctness
 
-The extended reduction suite passed **28 cases / 15,048 assertions** with P2.
+The same expanded reduction harness passed **28 cases / 15,048 assertions**
+with both P1 and P2. The P1 confirmation used visible devices 1 and 3; P2
+used devices 0 and 1.
 It covers two independent dependency chains, each with separate producer,
 reduction, and consumer nonblocking streams. Widths 1, 7, 32, and 255 each
 run 200 iterations with distinct inputs, a nonzero initial value, and a
