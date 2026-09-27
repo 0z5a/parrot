@@ -1,5 +1,11 @@
 # Segmented reduction stream validation
 
+**Follow-up:** the optimized full suite exposes three pre-existing array-test
+failures, and the public API-to-host benchmark shows a P2 slowdown. See
+[extended results](EXTENDED_STREAM_RESULTS.md) before interpreting the
+narrow latency table below.
+
+
 Tested on one RTX 5090 (SM120), CUDA 13.0.88, CCCL 3.4.2, using a
 nonblocking CUDA stream. The test records a producer event on one stream,
 waits for it on the reduction stream, reduces two 4-element segments, and
