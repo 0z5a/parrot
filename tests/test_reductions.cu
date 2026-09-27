@@ -289,7 +289,8 @@ TEST_CASE("ParrotTest - IndependentStreamDependencyChains") {
                 REQUIRE_EQ(cudaEventRecord(ready[lane], producer[lane]), cudaSuccess);
                 REQUIRE_EQ(cudaStreamWaitEvent(reduction[lane], ready[lane]), cudaSuccess);
                 thrustx::reduce_by_n(inputs[lane], inputs[lane] + count, outputs[lane],
-                                     width, cuda::std::plus<int>{}, 3, reduction[lane]);
+                                     width, cuda::std::plus<int>{}, 3, reduction[lane],
+                                     thrustx::scratch_allocation::stream_ordered);
                 REQUIRE_EQ(cudaEventRecord(reduced[lane], reduction[lane]), cudaSuccess);
                 REQUIRE_EQ(cudaStreamWaitEvent(consumer[lane], reduced[lane]), cudaSuccess);
                 store_stress_output<<<1, 128, 0, consumer[lane]>>>(
@@ -372,7 +373,8 @@ TEST_CASE("ParrotTest - TwoDeviceScratchIsolation") {
         for (int device = 0; device < 2; ++device) {
             REQUIRE_EQ(cudaSetDevice(device), cudaSuccess);
             thrustx::reduce_by_n(input[device], input[device] + count,
-                output[device] + step * segments, width, cuda::std::plus<int>{}, 0, stream[device]);
+                output[device] + step * segments, width, cuda::std::plus<int>{}, 0, stream[device],
+                thrustx::scratch_allocation::stream_ordered);
         }
     }
     for (int device = 0; device < 2; ++device) {
@@ -397,4 +399,20 @@ TEST_CASE("ParrotTest - TwoDeviceScratchIsolation") {
         REQUIRE_EQ(cudaStreamDestroy(stream[device]), cudaSuccess);
     }
     REQUIRE_EQ(cudaSetDevice(original_device), cudaSuccess);
+}
+
+
+TEST_CASE("ParrotTest - ExplicitScratchAllocationPolicies") {
+    thrust::device_vector<int> input(8, 2), output(2, 0);
+    cudaStream_t stream;
+    REQUIRE_EQ(cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking), cudaSuccess);
+    for (auto policy : {thrustx::scratch_allocation::synchronous,
+                        thrustx::scratch_allocation::stream_ordered}) {
+        thrustx::reduce_by_n(input.begin(), input.end(), output.begin(), 4,
+                            cuda::std::plus<int>{}, 3, stream, policy);
+        REQUIRE_EQ(cudaStreamSynchronize(stream), cudaSuccess);
+        CHECK_EQ(output[0], 11);
+        CHECK_EQ(output[1], 11);
+    }
+    REQUIRE_EQ(cudaStreamDestroy(stream), cudaSuccess);
 }

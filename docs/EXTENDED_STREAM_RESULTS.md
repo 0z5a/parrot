@@ -1,3 +1,7 @@
+**Superseded policy:** these measurements used automatic asynchronous scratch.
+See [final opt-in policy and two-GPU-architecture results](STREAM_POLICY_RESULTS.md)
+for the current implementation and restored default public-path performance.
+
 # Extended stream validation and application-path timing
 
 Hardware/toolchain: RTX 5090, CUDA 13.0.88, CCCL 3.4.2, doctest 2.4.11.
@@ -84,8 +88,8 @@ it is not kernel-only duration. For `public`, `submit_us` also includes
 the synchronizations and host copies inside each iteration.
 
 **The earlier 1.57× narrow scratch benchmark does not establish a speedup
-for the public API. The measured public-path slowdown remains unresolved,
-and this PR stays draft.** No production implementation was changed during
+for the public API. At this automatic-policy revision, the public-path slowdown remained unresolved.
+The final opt-in revision and new results are linked above.** No production implementation was changed during
 this follow-up.
 
 ## Build and evidence

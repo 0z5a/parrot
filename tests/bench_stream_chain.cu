@@ -49,7 +49,12 @@ int main(int argc, char **argv) {
         if (mode == "chain") {
             produce_chain<<<(count + 255) / 256, 256, 0, stream>>>(in, count);
             check_cuda(cudaGetLastError());
+#ifdef PARROT_STREAM_ORDERED_SCRATCH
+            thrustx::reduce_by_n(in, in + count, out, width, cuda::std::plus<int>{}, 0,
+                                 stream, thrustx::scratch_allocation::stream_ordered);
+#else
             thrustx::reduce_by_n(in, in + count, out, width, cuda::std::plus<int>{}, 0, stream);
+#endif
             consume_chain<<<(segments + 255) / 256, 256, 0, stream>>>(out, segments);
             check_cuda(cudaGetLastError());
         } else {

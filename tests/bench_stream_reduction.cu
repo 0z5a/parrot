@@ -35,14 +35,24 @@ int main() {
     cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking);
     cudaMemsetAsync(input, 1, segments * width * sizeof(int), stream);
     for (int i = 0; i < 20; ++i) {
+#ifdef PARROT_STREAM_ORDERED_SCRATCH
+        thrustx::reduce_by_n(input, input + segments * width, output, width,
+                             add_int{}, 0, stream, thrustx::scratch_allocation::stream_ordered);
+#else
         thrustx::reduce_by_n(input, input + segments * width, output, width,
                              add_int{}, 0, stream);
+#endif
     }
     cudaStreamSynchronize(stream);
     const auto start = std::chrono::steady_clock::now();
     for (int i = 0; i < repetitions; ++i) {
+#ifdef PARROT_STREAM_ORDERED_SCRATCH
+        thrustx::reduce_by_n(input, input + segments * width, output, width,
+                             add_int{}, 0, stream, thrustx::scratch_allocation::stream_ordered);
+#else
         thrustx::reduce_by_n(input, input + segments * width, output, width,
                              add_int{}, 0, stream);
+#endif
     }
     const auto status = cudaStreamSynchronize(stream);
     const auto stop = std::chrono::steady_clock::now();

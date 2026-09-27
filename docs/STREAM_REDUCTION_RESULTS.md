@@ -1,6 +1,10 @@
-# Segmented reduction stream validation
+**Superseded policy:** these measurements used automatic asynchronous scratch.
+See [final opt-in policy and two-GPU-architecture results](STREAM_POLICY_RESULTS.md)
+for the current implementation and restored default public-path performance.
 
-**Follow-up:** the optimized full suite exposes three pre-existing array-test
+# Historical segmented reduction stream validation
+
+**Historical follow-up:** the optimized full suite exposes three pre-existing array-test
 failures, and the public API-to-host benchmark shows a P2 slowdown. See
 [extended results](EXTENDED_STREAM_RESULTS.md) before interpreting the
 narrow latency table below.
