@@ -65,32 +65,40 @@ void reduce_by_n_impl(InputIterator first,
     size_t temp_storage_bytes = 0;
 
     // Query temp storage size using CUB's fixed-size segmented reduce API
-    cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
-                                       temp_storage_bytes,
-                                       first,
-                                       out,
-                                       num_segments,
-                                       N,  // segment_size
-                                       op,
-                                       init,
-                                       stream);
+    auto status = cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
+                                                      temp_storage_bytes,
+                                                      first,
+                                                      out,
+                                                      num_segments,
+                                                      N,
+                                                      op,
+                                                      init,
+                                                      stream);
+    if (status != cudaSuccess) { throw std::runtime_error(cudaGetErrorString(status)); }
 
-    // Raw CUDA allocation - no initialization kernel
-    cudaMalloc(&d_temp_storage, temp_storage_bytes);
+    // Keep the old default-stream behavior; explicit streams order scratch
+    // allocation, reduction, and release without a device-wide free.
+    status = stream ? cudaMallocAsync(&d_temp_storage, temp_storage_bytes, stream)
+                    : cudaMalloc(&d_temp_storage, temp_storage_bytes);
+    if (status != cudaSuccess) { throw std::runtime_error(cudaGetErrorString(status)); }
 
-    // Actual reduction using fixed-size segmented reduce
-    cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
-                                       temp_storage_bytes,
-                                       first,
-                                       out,
-                                       num_segments,
-                                       N,  // segment_size
-                                       op,
-                                       init,
-                                       stream);
-
-    // Free temp storage
-    cudaFree(d_temp_storage);
+    auto launch_status = cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
+                                                            temp_storage_bytes,
+                                                            first,
+                                                            out,
+                                                            num_segments,
+                                                            N,
+                                                            op,
+                                                            init,
+                                                            stream);
+    auto free_status = stream ? cudaFreeAsync(d_temp_storage, stream)
+                              : cudaFree(d_temp_storage);
+    if (launch_status != cudaSuccess) {
+        throw std::runtime_error(cudaGetErrorString(launch_status));
+    }
+    if (free_status != cudaSuccess) {
+        throw std::runtime_error(cudaGetErrorString(free_status));
+    }
 }
 
 // Cycle functor for cycling through indices
