@@ -32,6 +32,8 @@
 // ThrustX namespace for extended thrust functionality
 namespace thrustx {
 
+enum class scratch_allocation { synchronous, stream_ordered };
+
 // High-performance implementation using CUB's optimized uniform segmentation
 // Reduces input into segments of N elements each using CUB's fixed-size
 // segmented reduce API when possible
@@ -45,7 +47,8 @@ void reduce_by_n_impl(InputIterator first,
                       int N,
                       BinaryOp op,
                       T init,
-                      cudaStream_t stream = 0) {
+                      cudaStream_t stream = 0,
+                      scratch_allocation allocation = scratch_allocation::synchronous) {
     if (N <= 0) {
         throw std::invalid_argument("reduce_by_n: N must be positive");
     }
@@ -65,32 +68,41 @@ void reduce_by_n_impl(InputIterator first,
     size_t temp_storage_bytes = 0;
 
     // Query temp storage size using CUB's fixed-size segmented reduce API
-    cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
-                                       temp_storage_bytes,
-                                       first,
-                                       out,
-                                       num_segments,
-                                       N,  // segment_size
-                                       op,
-                                       init,
-                                       stream);
+    auto status = cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
+                                                      temp_storage_bytes,
+                                                      first,
+                                                      out,
+                                                      num_segments,
+                                                      N,
+                                                      op,
+                                                      init,
+                                                      stream);
+    if (status != cudaSuccess) { throw std::runtime_error(cudaGetErrorString(status)); }
 
-    // Raw CUDA allocation - no initialization kernel
-    cudaMalloc(&d_temp_storage, temp_storage_bytes);
+    // Callers with synchronous output ownership can retain synchronous scratch.
+    // Preallocated pipelines order scratch allocation/use/release on their stream.
+    const bool async_scratch = stream && allocation == scratch_allocation::stream_ordered;
+    status = async_scratch ? cudaMallocAsync(&d_temp_storage, temp_storage_bytes, stream)
+                    : cudaMalloc(&d_temp_storage, temp_storage_bytes);
+    if (status != cudaSuccess) { throw std::runtime_error(cudaGetErrorString(status)); }
 
-    // Actual reduction using fixed-size segmented reduce
-    cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
-                                       temp_storage_bytes,
-                                       first,
-                                       out,
-                                       num_segments,
-                                       N,  // segment_size
-                                       op,
-                                       init,
-                                       stream);
-
-    // Free temp storage
-    cudaFree(d_temp_storage);
+    auto launch_status = cub::DeviceSegmentedReduce::Reduce(d_temp_storage,
+                                                            temp_storage_bytes,
+                                                            first,
+                                                            out,
+                                                            num_segments,
+                                                            N,
+                                                            op,
+                                                            init,
+                                                            stream);
+    auto free_status = async_scratch ? cudaFreeAsync(d_temp_storage, stream)
+                              : cudaFree(d_temp_storage);
+    if (launch_status != cudaSuccess) {
+        throw std::runtime_error(cudaGetErrorString(launch_status));
+    }
+    if (free_status != cudaSuccess) {
+        throw std::runtime_error(cudaGetErrorString(free_status));
+    }
 }
 
 // Cycle functor for cycling through indices
@@ -288,7 +300,8 @@ void reduce_by_n(InputIterator first,
     reduce_by_n_impl(first, last, out, N, op, init);
 }
 
-// Explicit stream for callers that order producers and consumers themselves.
+// Existing calls retain synchronous scratch. Preallocated pipelines can opt in
+// to stream_ordered scratch and must preserve input/output lifetimes until completion.
 template <typename InputIterator,
           typename OutputIterator,
           typename BinaryOp,
@@ -299,8 +312,9 @@ void reduce_by_n(InputIterator first,
                  int N,
                  BinaryOp op,
                  T init,
-                 cudaStream_t stream) {
-    reduce_by_n_impl(first, last, out, N, op, init, stream);
+                 cudaStream_t stream,
+                 scratch_allocation allocation = scratch_allocation::synchronous) {
+    reduce_by_n_impl(first, last, out, N, op, init, stream, allocation);
 }
 
 // Backward compatibility overload (uses default initialization)

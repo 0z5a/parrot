@@ -1,0 +1,1607 @@
+{
+  "chain-paired": [
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 28.2685,
+      "submit_us": 28.2194,
+      "stream_timeline_us": 28.203,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 45.6329,
+      "submit_us": 43.7128,
+      "stream_timeline_us": 43.679,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 37.2669,
+      "submit_us": 37.2069,
+      "stream_timeline_us": 37.2,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 28.6704,
+      "submit_us": 23.5425,
+      "stream_timeline_us": 23.5218,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1000.3896,
+      "submit_us": 1000.3305,
+      "stream_timeline_us": 1000.029,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1302.6851,
+      "submit_us": 1302.6188,
+      "stream_timeline_us": 1302.6183,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 16431.857,
+      "submit_us": 16431.6747,
+      "stream_timeline_us": 16431.752,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24403.1548,
+      "submit_us": 24403.0584,
+      "stream_timeline_us": 24403.0391,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 26.9754,
+      "submit_us": 25.8372,
+      "stream_timeline_us": 25.8269,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 36.088,
+      "submit_us": 36.0244,
+      "stream_timeline_us": 36.0109,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 27.1589,
+      "submit_us": 26.0486,
+      "stream_timeline_us": 26.037,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 22.4759,
+      "submit_us": 22.4357,
+      "stream_timeline_us": 22.4173,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1608.3066,
+      "submit_us": 1608.1954,
+      "stream_timeline_us": 1608.2161,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1190.6901,
+      "submit_us": 1190.6097,
+      "stream_timeline_us": 1190.6104,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 21768.7572,
+      "submit_us": 21768.6635,
+      "stream_timeline_us": 21768.6445,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17241.4618,
+      "submit_us": 17241.3755,
+      "stream_timeline_us": 17241.3555,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 26.1519,
+      "submit_us": 26.1022,
+      "stream_timeline_us": 26.0918,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.6477,
+      "submit_us": 19.8285,
+      "stream_timeline_us": 19.8134,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.9381,
+      "submit_us": 24.8906,
+      "stream_timeline_us": 24.8778,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.5655,
+      "submit_us": 19.7665,
+      "stream_timeline_us": 19.7512,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1133.5129,
+      "submit_us": 1133.4256,
+      "stream_timeline_us": 1133.4309,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 3838.7365,
+      "submit_us": 3838.6168,
+      "stream_timeline_us": 3838.6218,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 19246.4037,
+      "submit_us": 19246.3244,
+      "stream_timeline_us": 19246.3027,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 23138.7952,
+      "submit_us": 23138.6748,
+      "stream_timeline_us": 23138.6582,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.4647,
+      "submit_us": 22.5271,
+      "stream_timeline_us": 22.5101,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.5495,
+      "submit_us": 23.5035,
+      "stream_timeline_us": 23.4885,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 30.8139,
+      "submit_us": 29.6324,
+      "stream_timeline_us": 29.6197,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 38.8909,
+      "submit_us": 38.8239,
+      "stream_timeline_us": 38.8104,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1413.2006,
+      "submit_us": 1413.1047,
+      "stream_timeline_us": 1413.1177,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1158.0047,
+      "submit_us": 1157.9272,
+      "stream_timeline_us": 1157.9276,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20912.5354,
+      "submit_us": 20912.4246,
+      "stream_timeline_us": 20912.3926,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17433.9641,
+      "submit_us": 17433.9096,
+      "stream_timeline_us": 17433.8691,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 33.9654,
+      "submit_us": 33.8976,
+      "stream_timeline_us": 33.8917,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 17.5411,
+      "submit_us": 16.8192,
+      "stream_timeline_us": 16.8104,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 38.4726,
+      "submit_us": 38.407,
+      "stream_timeline_us": 38.389,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.5675,
+      "submit_us": 19.7513,
+      "stream_timeline_us": 19.736,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 840.4658,
+      "submit_us": 840.4227,
+      "stream_timeline_us": 840.4288,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1052.4043,
+      "submit_us": 1052.3476,
+      "stream_timeline_us": 1052.3545,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 14108.3478,
+      "submit_us": 14108.3009,
+      "stream_timeline_us": 14108.2842,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 15922.0769,
+      "submit_us": 15922.01,
+      "stream_timeline_us": 15921.9805,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 22.9637,
+      "submit_us": 22.0711,
+      "stream_timeline_us": 22.0552,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 15.9754,
+      "submit_us": 15.9508,
+      "stream_timeline_us": 15.9344,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 15.8317,
+      "submit_us": 14.9846,
+      "stream_timeline_us": 14.9718,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 16.5824,
+      "submit_us": 16.5565,
+      "stream_timeline_us": 16.5424,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 984.9124,
+      "submit_us": 984.8658,
+      "stream_timeline_us": 984.8679,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 886.8443,
+      "submit_us": 886.801,
+      "stream_timeline_us": 886.7965,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 16540.9566,
+      "submit_us": 16540.9033,
+      "stream_timeline_us": 16540.8828,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 12937.886,
+      "submit_us": 12937.8313,
+      "stream_timeline_us": 12937.8184,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 31.8763,
+      "submit_us": 31.8232,
+      "stream_timeline_us": 31.8112,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 12.7974,
+      "submit_us": 12.2297,
+      "stream_timeline_us": 12.2088,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 18.2356,
+      "submit_us": 18.2035,
+      "stream_timeline_us": 18.1925,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.482,
+      "submit_us": 19.6065,
+      "stream_timeline_us": 19.5939,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 915.0993,
+      "submit_us": 915.0564,
+      "stream_timeline_us": 915.0466,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1116.4296,
+      "submit_us": 1116.3655,
+      "stream_timeline_us": 1116.3721,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 14000.9817,
+      "submit_us": 14000.9299,
+      "stream_timeline_us": 14000.9111,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20199.8609,
+      "submit_us": 20199.8021,
+      "stream_timeline_us": 20199.7715,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 12.7035,
+      "submit_us": 12.1427,
+      "stream_timeline_us": 12.1293,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.1467,
+      "submit_us": 23.1073,
+      "stream_timeline_us": 23.0939,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 14.1035,
+      "submit_us": 13.4883,
+      "stream_timeline_us": 13.475,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.626,
+      "submit_us": 20.5857,
+      "stream_timeline_us": 20.5782,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 3361.6904,
+      "submit_us": 3361.6063,
+      "stream_timeline_us": 3361.6003,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 966.23,
+      "submit_us": 966.1689,
+      "stream_timeline_us": 966.1672,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 15789.0247,
+      "submit_us": 15788.9664,
+      "stream_timeline_us": 15788.9453,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17746.7287,
+      "submit_us": 17746.6375,
+      "stream_timeline_us": 17746.6348,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    }
+  ],
+  "chain-paired-pinned": [
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 38.2012,
+      "submit_us": 38.1312,
+      "stream_timeline_us": 38.1006,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.2431,
+      "submit_us": 19.4314,
+      "stream_timeline_us": 19.4131,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 27.5161,
+      "submit_us": 27.4691,
+      "stream_timeline_us": 27.4582,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 21.0646,
+      "submit_us": 20.1881,
+      "stream_timeline_us": 20.1747,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1137.226,
+      "submit_us": 1137.1642,
+      "stream_timeline_us": 1137.1622,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1464.4323,
+      "submit_us": 1464.3534,
+      "stream_timeline_us": 1464.3611,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 18130.392,
+      "submit_us": 18130.2561,
+      "stream_timeline_us": 18130.2754,
+      "correct": true,
+      "pair": 0,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 22878.1909,
+      "submit_us": 22878.1046,
+      "stream_timeline_us": 22878.1172,
+      "correct": true,
+      "pair": 0,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.5179,
+      "submit_us": 19.7211,
+      "stream_timeline_us": 19.7029,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.8223,
+      "submit_us": 23.7718,
+      "stream_timeline_us": 23.7613,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.7859,
+      "submit_us": 19.9764,
+      "stream_timeline_us": 19.9643,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.2489,
+      "submit_us": 24.2008,
+      "stream_timeline_us": 24.1787,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1461.3067,
+      "submit_us": 1461.2259,
+      "stream_timeline_us": 1461.2323,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1150.7147,
+      "submit_us": 1150.6393,
+      "stream_timeline_us": 1150.6505,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 22371.6163,
+      "submit_us": 22371.5354,
+      "stream_timeline_us": 22371.5332,
+      "correct": true,
+      "pair": 1,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 18394.928,
+      "submit_us": 18394.8384,
+      "stream_timeline_us": 18394.8496,
+      "correct": true,
+      "pair": 1,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 25.0751,
+      "submit_us": 25.0052,
+      "stream_timeline_us": 25.0027,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.6354,
+      "submit_us": 22.7239,
+      "stream_timeline_us": 22.7136,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 25.1049,
+      "submit_us": 25.0535,
+      "stream_timeline_us": 25.0338,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 21.5146,
+      "submit_us": 20.6347,
+      "stream_timeline_us": 20.6286,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1119.1956,
+      "submit_us": 1119.1157,
+      "stream_timeline_us": 1119.1234,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1433.117,
+      "submit_us": 1433.0305,
+      "stream_timeline_us": 1433.0314,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17981.0191,
+      "submit_us": 17980.938,
+      "stream_timeline_us": 17980.9434,
+      "correct": true,
+      "pair": 2,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20948.4204,
+      "submit_us": 20948.3348,
+      "stream_timeline_us": 20948.3301,
+      "correct": true,
+      "pair": 2,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 19.2682,
+      "submit_us": 18.4952,
+      "stream_timeline_us": 18.4758,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.611,
+      "submit_us": 23.5626,
+      "stream_timeline_us": 23.5502,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.3295,
+      "submit_us": 19.5378,
+      "stream_timeline_us": 19.469,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.2638,
+      "submit_us": 24.2149,
+      "stream_timeline_us": 24.2021,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1439.3126,
+      "submit_us": 1439.2439,
+      "stream_timeline_us": 1439.2368,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1141.6672,
+      "submit_us": 1141.6054,
+      "stream_timeline_us": 1141.6082,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20714.6975,
+      "submit_us": 20714.6039,
+      "stream_timeline_us": 20714.6172,
+      "correct": true,
+      "pair": 3,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17826.9346,
+      "submit_us": 17826.8503,
+      "stream_timeline_us": 17826.8594,
+      "correct": true,
+      "pair": 3,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 31.0991,
+      "submit_us": 31.0386,
+      "stream_timeline_us": 31.0246,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.433,
+      "submit_us": 19.6431,
+      "stream_timeline_us": 19.629,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.3526,
+      "submit_us": 24.3089,
+      "stream_timeline_us": 24.295,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.3051,
+      "submit_us": 19.5197,
+      "stream_timeline_us": 19.5074,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1117.3499,
+      "submit_us": 1117.2913,
+      "stream_timeline_us": 1117.295,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 2222.4874,
+      "submit_us": 2222.4123,
+      "stream_timeline_us": 2222.4287,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17487.8766,
+      "submit_us": 17487.785,
+      "stream_timeline_us": 17487.7949,
+      "correct": true,
+      "pair": 4,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24719.4648,
+      "submit_us": 24718.9676,
+      "stream_timeline_us": 24719.3633,
+      "correct": true,
+      "pair": 4,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.427,
+      "submit_us": 19.4128,
+      "stream_timeline_us": 19.4408,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 24.2491,
+      "submit_us": 24.1981,
+      "stream_timeline_us": 24.1862,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.717,
+      "submit_us": 19.8616,
+      "stream_timeline_us": 19.8488,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.2101,
+      "submit_us": 24.1627,
+      "stream_timeline_us": 24.1534,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 3179.6028,
+      "submit_us": 3179.5363,
+      "stream_timeline_us": 3179.5361,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1139.0407,
+      "submit_us": 1138.9676,
+      "stream_timeline_us": 1138.9723,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 19979.0728,
+      "submit_us": 19978.9809,
+      "stream_timeline_us": 19978.9863,
+      "correct": true,
+      "pair": 5,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17993.8265,
+      "submit_us": 17993.74,
+      "stream_timeline_us": 17993.7422,
+      "correct": true,
+      "pair": 5,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 28.223,
+      "submit_us": 28.1593,
+      "stream_timeline_us": 28.1517,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 20.5142,
+      "submit_us": 19.7056,
+      "stream_timeline_us": 19.652,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 35.1279,
+      "submit_us": 35.0627,
+      "stream_timeline_us": 35.0597,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 21.2526,
+      "submit_us": 20.3348,
+      "stream_timeline_us": 20.3219,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1137.2485,
+      "submit_us": 1137.1835,
+      "stream_timeline_us": 1137.1793,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1414.1127,
+      "submit_us": 1414.0407,
+      "stream_timeline_us": 1414.0439,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 17942.4815,
+      "submit_us": 17942.3918,
+      "stream_timeline_us": 17942.3984,
+      "correct": true,
+      "pair": 6,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 19983.3982,
+      "submit_us": 19983.3009,
+      "stream_timeline_us": 19983.293,
+      "correct": true,
+      "pair": 6,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 479.8129,
+      "submit_us": 33.2097,
+      "stream_timeline_us": 33.151,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "total_us": 23.5449,
+      "submit_us": 23.4936,
+      "stream_timeline_us": 23.4869,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 20.2746,
+      "submit_us": 19.435,
+      "stream_timeline_us": 19.3797,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 24.8944,
+      "submit_us": 24.8433,
+      "stream_timeline_us": 24.8274,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1438.4081,
+      "submit_us": 1438.3322,
+      "stream_timeline_us": 1438.3324,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "total_us": 1142.8725,
+      "submit_us": 1142.8119,
+      "stream_timeline_us": 1142.8116,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 19762.2796,
+      "submit_us": 19762.1848,
+      "stream_timeline_us": 19762.1816,
+      "correct": true,
+      "pair": 7,
+      "arm": "p2"
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "total_us": 18138.916,
+      "submit_us": 18138.8302,
+      "stream_timeline_us": 18138.8281,
+      "correct": true,
+      "pair": 7,
+      "arm": "p1"
+    }
+  ],
+  "chain-summary": [
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "p1_us": 27.2102,
+      "p2_us": 21.8057,
+      "median_ratio": 1.2478480397327303,
+      "paired_geomean": 1.262161526854455,
+      "paired_bootstrap95": [
+        0.9111022449304745,
+        1.7192021278216476
+      ],
+      "p1_range": [
+        15.9754,
+        36.088
+      ],
+      "p2_range": [
+        12.7035,
+        45.6329
+      ]
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "p1_us": 23.707,
+      "p2_us": 20.566499999999998,
+      "median_ratio": 1.1526997787664408,
+      "paired_geomean": 1.1964806783637123,
+      "paired_bootstrap95": [
+        1.0087715040550136,
+        1.4244840923289486
+      ],
+      "p1_range": [
+        16.5824,
+        38.8909
+      ],
+      "p2_range": [
+        14.1035,
+        30.8139
+      ]
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "p1_us": 983.3098,
+      "p2_us": 1357.94285,
+      "median_ratio": 0.7241172189241986,
+      "paired_geomean": 0.6250739472455389,
+      "paired_bootstrap95": [
+        0.46811988485262246,
+        0.8164901958851911
+      ],
+      "p1_range": [
+        840.4658,
+        1190.6901
+      ],
+      "p2_range": [
+        984.9124,
+        3838.7365
+      ]
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "p1_us": 16836.6594,
+      "p2_us": 20556.19815,
+      "median_ratio": 0.8190551227975977,
+      "paired_geomean": 0.817601086929585,
+      "paired_bootstrap95": [
+        0.7432822110235591,
+        0.9120933522769757
+      ],
+      "p1_range": [
+        12937.886,
+        19246.4037
+      ],
+      "p2_range": [
+        15789.0247,
+        24403.1548
+      ]
+    }
+  ],
+  "chain-summary-pinned": [
+    {
+      "mode": "chain",
+      "segments": 128,
+      "width": 8,
+      "p1_us": 24.6621,
+      "p2_us": 20.473599999999998,
+      "median_ratio": 1.204580532979056,
+      "paired_geomean": 0.876214619554806,
+      "paired_bootstrap95": [
+        0.37137064765483213,
+        1.459099756258945
+      ],
+      "p1_range": [
+        23.5449,
+        38.2012
+      ],
+      "p2_range": [
+        19.2682,
+        479.8129
+      ]
+    },
+    {
+      "mode": "chain",
+      "segments": 2048,
+      "width": 128,
+      "p1_us": 24.6235,
+      "p2_us": 20.75145,
+      "median_ratio": 1.1865917803334225,
+      "paired_geomean": 1.2519924284100445,
+      "paired_bootstrap95": [
+        1.1818810916080045,
+        1.3656042671559028
+      ],
+      "p1_range": [
+        24.2101,
+        35.1279
+      ],
+      "p2_range": [
+        20.2746,
+        21.5146
+      ]
+    },
+    {
+      "mode": "public",
+      "segments": 128,
+      "width": 8,
+      "p1_us": 1138.1446,
+      "p2_us": 1450.3096500000001,
+      "median_ratio": 0.7847597235528289,
+      "paired_geomean": 0.6759693004442554,
+      "paired_bootstrap95": [
+        0.5512212687050588,
+        0.7915285757988382
+      ],
+      "p1_range": [
+        1117.3499,
+        1150.7147
+      ],
+      "p2_range": [
+        1414.1127,
+        3179.6028
+      ]
+    },
+    {
+      "mode": "public",
+      "segments": 2048,
+      "width": 128,
+      "p1_us": 17987.4228,
+      "p2_us": 20831.55895,
+      "median_ratio": 0.8634698364713602,
+      "paired_geomean": 0.8420446610228942,
+      "paired_bootstrap95": [
+        0.7938369799607236,
+        0.8860194541541663
+      ],
+      "p1_range": [
+        17487.8766,
+        18394.928
+      ],
+      "p2_range": [
+        19762.2796,
+        24719.4648
+      ]
+    }
+  ],
+  "extended-test": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases:    28 |    28 passed | 0 failed | 0 skipped\n[doctest] assertions: 15048 | 15048 passed | 0 failed |\n[doctest] Status: SUCCESS!\n",
+  "extended-memcheck": "========= COMPUTE-SANITIZER\n[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases:    28 |    28 passed | 0 failed | 0 skipped\n[doctest] assertions: 15048 | 15048 passed | 0 failed |\n[doctest] Status: SUCCESS!\n========= LEAK SUMMARY: 0 bytes leaked in 0 allocations\n========= ERROR SUMMARY: 0 errors\n",
+  "extended-synccheck": "========= COMPUTE-SANITIZER\n[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases:    28 |    28 passed | 0 failed | 0 skipped\n[doctest] assertions: 15048 | 15048 passed | 0 failed |\n[doctest] Status: SUCCESS!\n========= ERROR SUMMARY: 0 errors\n",
+  "full-extended-test": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:61:\nTEST CASE:  ParrotTest - MinArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:66: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:70:\nTEST CASE:  ParrotTest - MaxArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:75: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:185:\nTEST CASE:  ParrotTest - CombinedArrayAndScalarTest\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -855636476, 15 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -855636472, 40 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -855636468, 30 )\n\n===============================================================================\n[doctest] test cases:   237 |   234 passed | 3 failed | 0 skipped\n[doctest] assertions: 15842 | 15837 passed | 5 failed |\n[doctest] Status: FAILURE!\n",
+  "array-release-upstream": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:61:\nTEST CASE:  ParrotTest - MinArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:66: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:70:\nTEST CASE:  ParrotTest - MaxArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:75: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:185:\nTEST CASE:  ParrotTest - CombinedArrayAndScalarTest\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -1493170684, 15 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -1493170680, 40 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -1493170676, 30 )\n\n===============================================================================\n[doctest] test cases: 36 | 33 passed | 3 failed | 0 skipped\n[doctest] assertions: 85 | 80 passed | 5 failed |\n[doctest] Status: FAILURE!\n",
+  "array-release-p1": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:61:\nTEST CASE:  ParrotTest - MinArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:66: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:70:\nTEST CASE:  ParrotTest - MaxArrayTest\n\nsrc/parrot/tests/test_array_operations.cu:75: ERROR: CHECK( check_match(result, expected) ) is NOT correct!\n  values: CHECK( false )\n\n===============================================================================\nsrc/parrot/tests/test_array_operations.cu:185:\nTEST CASE:  ParrotTest - CombinedArrayAndScalarTest\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -822082044, 15 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -822082040, 40 )\n\nsrc/parrot/tests/test_common.hpp:61: ERROR: CHECK_EQ( result_host[i], expected_host[i] ) is NOT correct!\n  values: CHECK_EQ( -822082036, 30 )\n\n===============================================================================\n[doctest] test cases: 36 | 33 passed | 3 failed | 0 skipped\n[doctest] assertions: 85 | 80 passed | 5 failed |\n[doctest] Status: FAILURE!\n",
+  "array-value-result": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases: 36 | 36 passed | 0 failed | 0 skipped\n[doctest] assertions: 85 | 85 passed | 0 failed |\n[doctest] Status: SUCCESS!\n",
+  "sha256": {
+    "src/parrot/thrustx.hpp": "a72fbd81018889ce2abc7ad4ead367c534708f222afa4539115414dc9d9d0c45",
+    "src/parrot/parrot.hpp": "9bc220db3ebaee54142c560c6c68b173abfa3780df393dc304532a02de5619fd",
+    "src/parrot/tests/test_reductions.cu": "565c7a2e8bcdb0f9d7d1fbe5d67e95a63419c1b8fabbd6af90fb7d6ae723cbf4",
+    "src/parrot/tests/bench_stream_chain.cu": "5351636215dfa6955e993c696548f95c57f55021c846702ae2def1b5814edb0c",
+    "artifacts/A1/p1/thrustx.hpp": "7cf271923c4106cc16016ced121bc31d44d92c3b57bb33842fedef10b66531c0",
+    "artifacts/A1/p1/parrot.hpp": "9bc220db3ebaee54142c560c6c68b173abfa3780df393dc304532a02de5619fd",
+    "builds/test_extended_p2": "327ee66a357e1b9ec26eb7c50d4046d6bdd54b23491ccd1db2dccb83dfee00e3",
+    "builds/parrot_tests_extended_p2": "581a563cc0456126557e689dfbf8f188e547d9df3251b96f3c42b41ab44e2d69",
+    "builds/bench_chain_p1": "9a1b604e70d6febd98739a3e8f66873530455d4c5e112307f217afac3257c61e",
+    "builds/bench_chain_p2": "80d61f825e580bf2390be153ed61f05148fee54d6b65baf8568dd631e1846cb0",
+    "builds/test_extended_p1_current_tests": "bdbd1c34173f2971bd3b3220a6ab663565b1b1cf2c1a582d42aef94587fbb187"
+  },
+  "extended-p1-current-test": "[doctest] doctest version is \"2.4.11\"\n[doctest] run with \"--help\" for options\n===============================================================================\n[doctest] test cases:    28 |    28 passed | 0 failed | 0 skipped\n[doctest] assertions: 15048 | 15048 passed | 0 failed |\n[doctest] Status: SUCCESS!\n"
+}

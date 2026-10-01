@@ -259,3 +259,171 @@ TEST_CASE("ParrotTest - ExplicitStreamSegmentedReduction") {
     REQUIRE_EQ(cudaStreamDestroy(reduction), cudaSuccess);
     REQUIRE_EQ(cudaStreamDestroy(producer), cudaSuccess);
 }
+
+__global__ void fill_stress_input(int *values, int count, int seed) {
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i < count) { values[i] = (i % 17) - 8 + seed; }
+}
+
+__global__ void store_stress_output(const int *values, int *history, int count) {
+    int i = blockIdx.x * blockDim.x + threadIdx.x;
+    if (i < count) { history[i] = 2 * values[i]; }
+}
+
+TEST_CASE("ParrotTest - IndependentStreamDependencyChains") {
+    constexpr int steps = 200;
+    for (int width : {1, 7, 32, 255}) {
+        constexpr int segments = 37;
+        const int count = width * segments;
+        int *inputs[2], *outputs[2], *history[2];
+        cudaStream_t producer[2], reduction[2], consumer[2];
+        cudaEvent_t ready[2], reduced[2], consumed[2];
+        for (int lane = 0; lane < 2; ++lane) {
+            REQUIRE_EQ(cudaMalloc(&inputs[lane], count * sizeof(int)), cudaSuccess);
+            REQUIRE_EQ(cudaMalloc(&outputs[lane], segments * sizeof(int)), cudaSuccess);
+            REQUIRE_EQ(cudaMalloc(&history[lane], steps * segments * sizeof(int)), cudaSuccess);
+            REQUIRE_EQ(cudaStreamCreateWithFlags(&producer[lane], cudaStreamNonBlocking), cudaSuccess);
+            REQUIRE_EQ(cudaStreamCreateWithFlags(&reduction[lane], cudaStreamNonBlocking), cudaSuccess);
+            REQUIRE_EQ(cudaStreamCreateWithFlags(&consumer[lane], cudaStreamNonBlocking), cudaSuccess);
+            REQUIRE_EQ(cudaEventCreateWithFlags(&ready[lane], cudaEventDisableTiming), cudaSuccess);
+            REQUIRE_EQ(cudaEventCreateWithFlags(&reduced[lane], cudaEventDisableTiming), cudaSuccess);
+            REQUIRE_EQ(cudaEventCreateWithFlags(&consumed[lane], cudaEventDisableTiming), cudaSuccess);
+        }
+        for (int step = 0; step < steps; ++step) {
+            for (int lane = 0; lane < 2; ++lane) {
+                if (step) {
+                    REQUIRE_EQ(cudaStreamWaitEvent(producer[lane], consumed[lane]), cudaSuccess);
+                }
+                fill_stress_input<<<(count + 127) / 128, 128, 0, producer[lane]>>>(
+                    inputs[lane], count, step + lane * 1000);
+                REQUIRE_EQ(cudaGetLastError(), cudaSuccess);
+                REQUIRE_EQ(cudaEventRecord(ready[lane], producer[lane]), cudaSuccess);
+                REQUIRE_EQ(cudaStreamWaitEvent(reduction[lane], ready[lane]), cudaSuccess);
+                thrustx::reduce_by_n(inputs[lane], inputs[lane] + count, outputs[lane],
+                                     width, cuda::std::plus<int>{}, 3, reduction[lane],
+                                     thrustx::scratch_allocation::stream_ordered);
+                REQUIRE_EQ(cudaEventRecord(reduced[lane], reduction[lane]), cudaSuccess);
+                REQUIRE_EQ(cudaStreamWaitEvent(consumer[lane], reduced[lane]), cudaSuccess);
+                store_stress_output<<<1, 128, 0, consumer[lane]>>>(
+                    outputs[lane], history[lane] + step * segments, segments);
+                REQUIRE_EQ(cudaGetLastError(), cudaSuccess);
+                REQUIRE_EQ(cudaEventRecord(consumed[lane], consumer[lane]), cudaSuccess);
+            }
+        }
+        for (int lane = 0; lane < 2; ++lane) {
+            REQUIRE_EQ(cudaStreamSynchronize(consumer[lane]), cudaSuccess);
+            std::vector<int> host(steps * segments);
+            REQUIRE_EQ(cudaMemcpy(host.data(), history[lane], host.size() * sizeof(int),
+                                   cudaMemcpyDeviceToHost), cudaSuccess);
+            bool matches = true;
+            for (int step = 0; step < steps; ++step) {
+                for (int segment = 0; segment < segments; ++segment) {
+                    int expected = 3;
+                    for (int j = 0; j < width; ++j) {
+                        expected += ((segment * width + j) % 17) - 8 + step + lane * 1000;
+                    }
+                    matches &= host[step * segments + segment] == 2 * expected;
+                }
+            }
+            CHECK(matches);
+            REQUIRE_EQ(cudaFree(inputs[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaFree(outputs[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaFree(history[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaEventDestroy(ready[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaEventDestroy(reduced[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaEventDestroy(consumed[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaStreamDestroy(producer[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaStreamDestroy(reduction[lane]), cudaSuccess);
+            REQUIRE_EQ(cudaStreamDestroy(consumer[lane]), cudaSuccess);
+        }
+    }
+}
+
+TEST_CASE("ParrotTest - ExplicitStreamBoundariesAndColumns") {
+    thrust::device_vector<int> input(8, 1), output(8, -123);
+    cudaStream_t stream;
+    REQUIRE_EQ(cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking), cudaSuccess);
+    CHECK_NOTHROW(thrustx::reduce_by_n(input.begin(), input.begin(), output.begin(),
+                                      4, cuda::std::plus<int>{}, 0, stream));
+    for (int width : {0, -1, 3}) {
+        CHECK_THROWS_AS(thrustx::reduce_by_n(input.begin(), input.end(), output.begin(),
+                                            width, cuda::std::plus<int>{}, 0, stream),
+                        std::invalid_argument);
+    }
+    REQUIRE_EQ(cudaStreamSynchronize(stream), cudaSuccess);
+    CHECK_EQ(output[0], -123);
+    auto matrix = parrot::array({1, 2, 3, 4, 5, 6, 7, 8}).reshape({2, 4});
+    auto columns = matrix.reduce(0, parrot::add{}, std::integral_constant<int, 1>{}, stream);
+    REQUIRE_EQ(cudaStreamSynchronize(stream), cudaSuccess);
+    auto host = columns.to_host();
+    for (int i = 0; i < 4; ++i) { CHECK_EQ(host[i], 6 + 2 * i); }
+    REQUIRE_EQ(cudaStreamDestroy(stream), cudaSuccess);
+}
+
+TEST_CASE("ParrotTest - TwoDeviceScratchIsolation") {
+    int devices;
+    REQUIRE_EQ(cudaGetDeviceCount(&devices), cudaSuccess);
+    if (devices < 2) {
+        MESSAGE("TwoDeviceScratchIsolation requires two visible GPUs");
+        return;
+    }
+    constexpr int steps = 1000, segments = 64, width = 8, count = segments * width;
+    int *input[2], *output[2];
+    cudaStream_t stream[2];
+    int original_device;
+    REQUIRE_EQ(cudaGetDevice(&original_device), cudaSuccess);
+    for (int device = 0; device < 2; ++device) {
+        REQUIRE_EQ(cudaSetDevice(device), cudaSuccess);
+        REQUIRE_EQ(cudaMalloc(&input[device], count * sizeof(int)), cudaSuccess);
+        REQUIRE_EQ(cudaMalloc(&output[device], steps * segments * sizeof(int)), cudaSuccess);
+        REQUIRE_EQ(cudaStreamCreateWithFlags(&stream[device], cudaStreamNonBlocking), cudaSuccess);
+        fill_stress_input<<<4, 128, 0, stream[device]>>>(input[device], count, device * 100);
+        REQUIRE_EQ(cudaGetLastError(), cudaSuccess);
+    }
+    for (int step = 0; step < steps; ++step) {
+        for (int device = 0; device < 2; ++device) {
+            REQUIRE_EQ(cudaSetDevice(device), cudaSuccess);
+            thrustx::reduce_by_n(input[device], input[device] + count,
+                output[device] + step * segments, width, cuda::std::plus<int>{}, 0, stream[device],
+                thrustx::scratch_allocation::stream_ordered);
+        }
+    }
+    for (int device = 0; device < 2; ++device) {
+        REQUIRE_EQ(cudaSetDevice(device), cudaSuccess);
+        REQUIRE_EQ(cudaStreamSynchronize(stream[device]), cudaSuccess);
+        std::vector<int> host(steps * segments);
+        REQUIRE_EQ(cudaMemcpy(host.data(), output[device], host.size() * sizeof(int),
+                               cudaMemcpyDeviceToHost), cudaSuccess);
+        bool matches = true;
+        for (int step = 0; step < steps; ++step) {
+            for (int segment = 0; segment < segments; ++segment) {
+                int expected = 0;
+                for (int j = 0; j < width; ++j) {
+                    expected += ((segment * width + j) % 17) - 8 + device * 100;
+                }
+                matches &= host[step * segments + segment] == expected;
+            }
+        }
+        CHECK(matches);
+        REQUIRE_EQ(cudaFree(input[device]), cudaSuccess);
+        REQUIRE_EQ(cudaFree(output[device]), cudaSuccess);
+        REQUIRE_EQ(cudaStreamDestroy(stream[device]), cudaSuccess);
+    }
+    REQUIRE_EQ(cudaSetDevice(original_device), cudaSuccess);
+}
+
+
+TEST_CASE("ParrotTest - ExplicitScratchAllocationPolicies") {
+    thrust::device_vector<int> input(8, 2), output(2, 0);
+    cudaStream_t stream;
+    REQUIRE_EQ(cudaStreamCreateWithFlags(&stream, cudaStreamNonBlocking), cudaSuccess);
+    for (auto policy : {thrustx::scratch_allocation::synchronous,
+                        thrustx::scratch_allocation::stream_ordered}) {
+        thrustx::reduce_by_n(input.begin(), input.end(), output.begin(), 4,
+                            cuda::std::plus<int>{}, 3, stream, policy);
+        REQUIRE_EQ(cudaStreamSynchronize(stream), cudaSuccess);
+        CHECK_EQ(output[0], 11);
+        CHECK_EQ(output[1], 11);
+    }
+    REQUIRE_EQ(cudaStreamDestroy(stream), cudaSuccess);
+}
